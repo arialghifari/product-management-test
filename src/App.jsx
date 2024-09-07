@@ -8,24 +8,26 @@ export default function App() {
   return (
     <div className="flex flex-col items-center justify-between bg-gray-100">
       <div className="flex flex-col relative p-4 md:p-10 w-full md:w-[600px]">
-        <div className="grid grid-cols-2 mb-5 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-5 gap-1 sm:gap-2">
           <button
-            className={`text-xl font-semibold text-center rounded border p-2 ${
+            className={`text-lg font-semibold text-center rounded border p-2 ${
               currentApp === 'PRODUCT MENAGEMENT'
-                ? 'bg-blue-100 border-none'
-                : ''
+                ? 'bg-blue-200 border-none'
+                : 'border-gray-300'
             }`}
             onClick={() => setCurrentApp('PRODUCT MENAGEMENT')}
           >
-            Product Management
+            PRODUCT MANAGEMENT
           </button>
           <button
-            className={`text-xl font-semibold text-center rounded border p-2 ${
-              currentApp === 'POKEMON' ? 'bg-blue-100 border-none' : ''
+            className={`text-lg font-semibold text-center rounded border p-2 ${
+              currentApp === 'POKEMON'
+                ? 'bg-blue-200 border-none'
+                : 'border-gray-300'
             }`}
             onClick={() => setCurrentApp('POKEMON')}
           >
-            Pokemon
+            POKEMON
           </button>
         </div>
 

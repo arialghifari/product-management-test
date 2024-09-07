@@ -70,7 +70,7 @@ export default function ProductList() {
       <input
         type="text"
         placeholder="⌕ search.."
-        className="w-full p-2 border rounded border-gray-300 mb-4"
+        className="w-full py-2 px-3 border rounded border-gray-300 mb-4"
         onChange={(e) => setSearchQuery(e.target.value)}
       />
 
