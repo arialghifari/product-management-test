@@ -3,7 +3,7 @@ import ProductManagementApp from './components/ProductManagementApp'
 import PokemonApp from './components/PokemonApp'
 
 export default function App() {
-  const [currentApp, setCurrentApp] = React.useState('POKEMON')
+  const [currentApp, setCurrentApp] = React.useState('PRODUCT MENAGEMENT')
 
   return (
     <div className="flex flex-col items-center justify-between bg-gray-100">
