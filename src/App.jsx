@@ -1,21 +1,40 @@
-import AddProductModal from './components/AddProductModal'
-import ProductList from './components/ProductList'
+import React from 'react'
+import ProductManagementApp from './components/ProductManagementApp'
+import PokemonApp from './components/PokemonApp'
 
 export default function App() {
-  return (
-    <div className="flex flex-col items-center justify-between h-screen bg-gray-100">
-      <div className="flex flex-col relative p-4 md:p-10 w-full md:w-[600px]">
-        <h1 className="text-2xl font-semibold text-center mb-5">
-          Product Management
-        </h1>
+  const [currentApp, setCurrentApp] = React.useState('POKEMON')
 
-        <div className="space-y-4 mb-4">
-          <div className="flex justify-end">
-            <AddProductModal />
-          </div>
+  return (
+    <div className="flex flex-col items-center justify-between bg-gray-100">
+      <div className="flex flex-col relative p-4 md:p-10 w-full md:w-[600px]">
+        <div className="grid grid-cols-2 mb-5 gap-2">
+          <button
+            className={`text-xl font-semibold text-center rounded border p-2 ${
+              currentApp === 'PRODUCT MENAGEMENT'
+                ? 'bg-blue-100 border-none'
+                : ''
+            }`}
+            onClick={() => setCurrentApp('PRODUCT MENAGEMENT')}
+          >
+            Product Management
+          </button>
+          <button
+            className={`text-xl font-semibold text-center rounded border p-2 ${
+              currentApp === 'POKEMON' ? 'bg-blue-100 border-none' : ''
+            }`}
+            onClick={() => setCurrentApp('POKEMON')}
+          >
+            Pokemon
+          </button>
         </div>
 
-        <ProductList />
+        {currentApp === 'PRODUCT MENAGEMENT' && (
+          <ProductManagementApp setCurrentApp={setCurrentApp} />
+        )}
+        {currentApp === 'POKEMON' && (
+          <PokemonApp setCurrentApp={setCurrentApp} />
+        )}
       </div>
     </div>
   )
